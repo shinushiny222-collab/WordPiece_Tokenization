@@ -285,4 +285,183 @@ print("\nInput Tokens :", encoded_tokens)
 print("Token IDs :", token_ids)
 
 
+#Output
+
+WORD FREQUENCIES
+robot : 4
+robots : 2
+robotic : 2
+code : 3
+coder : 2
+coding : 2
+computer : 3
+compute : 1
+
+ INITIAL SPLITS
+robot -> ['r', '##o', '##b', '##o', '##t']
+robots -> ['r', '##o', '##b', '##o', '##t', '##s']
+robotic -> ['r', '##o', '##b', '##o', '##t', '##i', '##c']
+code -> ['c', '##o', '##d', '##e']
+coder -> ['c', '##o', '##d', '##e', '##r']
+coding -> ['c', '##o', '##d', '##i', '##n', '##g']
+computer -> ['c', '##o', '##m', '##p', '##u', '##t', '##e', '##r']
+compute -> ['c', '##o', '##m', '##p', '##u', '##t', '##e']
+
+ INITIAL VOCABULARY 
+##b
+##c
+##d
+##e
+##g
+##i
+##m
+##n
+##o
+##p
+##r
+##s
+##t
+##u
+c
+r
+
+ WORDPIECE TRAINING
+
+Merge 1
+Best Pair : ('##n', '##g')
+Pair Frequency : 2
+Score : 0.5
+New Token : ##ng
+
+Merge 2
+Best Pair : ('##i', '##c')
+Pair Frequency : 2
+Score : 0.25
+New Token : ##ic
+
+Merge 3
+Best Pair : ('##i', '##ng')
+Pair Frequency : 2
+Score : 0.5
+New Token : ##ing
+
+Merge 4
+Best Pair : ('##m', '##p')
+Pair Frequency : 4
+Score : 0.25
+New Token : ##mp
+
+Merge 5
+Best Pair : ('##mp', '##u')
+Pair Frequency : 4
+Score : 0.25
+New Token : ##mpu
+
+Merge 6
+Best Pair : ('##d', '##ing')
+Pair Frequency : 2
+Score : 0.142857
+New Token : ##ding
+
+Merge 7
+Best Pair : ('##d', '##e')
+Pair Frequency : 5
+Score : 0.111111
+New Token : ##de
+
+Merge 8
+Best Pair : ('##e', '##r')
+Pair Frequency : 3
+Score : 0.15
+New Token : ##er
+
+Merge 9
+Best Pair : ('##de', '##r')
+Pair Frequency : 2
+Score : 0.2
+New Token : ##der
+
+Merge 10
+Best Pair : ('##t', '##s')
+Pair Frequency : 2
+Score : 0.083333
+New Token : ##ts
+
+ FINAL WORD SPLITS 
+robot -> ['r', '##o', '##b', '##o', '##t']
+robots -> ['r', '##o', '##b', '##o', '##ts']
+robotic -> ['r', '##o', '##b', '##o', '##t', '##ic']
+code -> ['c', '##o', '##de']
+coder -> ['c', '##o', '##der']
+coding -> ['c', '##o', '##ding']
+computer -> ['c', '##o', '##mpu', '##t', '##er']
+compute -> ['c', '##o', '##mpu', '##t', '##e']
+
+ FINAL VOCABULARY 
+##b
+##c
+##d
+##de
+##der
+##ding
+##e
+##er
+##g
+##i
+##ic
+##ing
+##m
+##mp
+##mpu
+##n
+##ng
+##o
+##p
+##r
+##s
+##t
+##ts
+##u
+c
+r
+
+Vocabulary Size : 26
+
+ TEST TOKENIZATION 
+Test Word : robotic
+Tokens : ['r', '##o', '##b', '##o', '##t', '##ic']
+
+ TOKEN ID MAPPING 
+##b : 0
+##c : 1
+##d : 2
+##de : 3
+##der : 4
+##ding : 5
+##e : 6
+##er : 7
+##g : 8
+##i : 9
+##ic : 10
+##ing : 11
+##m : 12
+##mp : 13
+##mpu : 14
+##n : 15
+##ng : 16
+##o : 17
+##p : 18
+##r : 19
+##s : 20
+##t : 21
+##ts : 22
+##u : 23
+[UNK] : 24
+c : 25
+r : 26
+
+Input Tokens : ['r', '##o', '##b', '##o', '##t', '##ic']
+Token IDs : [26, 17, 0, 17, 21, 10]
+
+
 
